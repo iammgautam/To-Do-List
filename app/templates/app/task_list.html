@@ -1,0 +1,26 @@
+<h2> To DO List </h2>
+<br>
+<a href={%url 'task-create' %}>Create Task</a>
+<br>
+<table>
+    <thead>
+        <tr>
+            <th> Items: </th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for task in tasks %}
+            <tr>
+                <td>{{task.title}}</td>
+                <td></td>
+                <td></td>
+                <td>
+                    <a href={% url 'task-detail' task.id %}>View</a>
+                    <a href={% url 'task-update' task.id %}>Edit</a>
+                    <a href={% url 'task-delete' task.id %}>Delete</a>
+            </tr>
+        {% empty %}
+            <h3> No Items in List</h3>
+        {% endfor %}
+    </tbody>
+</table>
