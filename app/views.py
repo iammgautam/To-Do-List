@@ -25,12 +25,12 @@ class TaskList(LoginRequiredMixin, ListView):
         context['count'] = context['tasks'].filter(complete = False).count()
 
         #for the search of task in the task-list search bar.
-        # search_input = self.request.GET.get('search-area') or ''
-        # if search_input:
-        #     context['tasks'] = context['tasks'].filter(title_icontains = search_input)
-        # context['search_input'] = search_input
+        search_input = self.request.GET.get('search-area') or ''
+        if search_input:
+            context['tasks'] = context['tasks'].filter(title__startswith = search_input)
+        context['search_input'] = search_input
 
-        # return context
+        return context
 
 #Task Detail View
 class TaskDetail(LoginRequiredMixin, DetailView):

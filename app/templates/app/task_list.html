@@ -4,12 +4,18 @@
 {% else %}
     <a href='{% url 'login' %}'>Login</a>
 {% endif %}
-
 <hr>
-<h2> To DO List </h2>
-<br>
+
+<h1> To DO List </h1>
 <a href={%url 'task-create' %}>Create Task</a>
 <br>
+<hr>
+
+<form method='GET'>
+    <input type='text' name='search-area' value='{{search_input}}'>
+    <input type='submit' value='Search'>
+</form>
+<hr>
 <table>
     <thead>
         <tr>
