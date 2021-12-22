@@ -1,8 +1,18 @@
-<h3>Create Task</h3>
-<a href={% url 'task-list' %}> Go Back </a>
+{% extends 'app/base.htm' %}
+{% block content %}
 
-<form method='POST' action=''>
-    {% csrf_token %}
-    {{form.as_p}}
-    <input type='submit' value='Submit'>
-</form>
+<div class="header-bar">
+    <h3>Add Task</h3>
+    <a href="{% url 'task-list' %}">&#8592; Back</a>
+</div>
+
+
+<div class="card-body">
+    <form method='POST' action=''>
+        {% csrf_token %}
+        {{form.as_p}}
+        <input class = 'button' type='submit' value='Submit'>
+    </form>
+</div>
+
+{% endblock content %}
