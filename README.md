@@ -9,34 +9,60 @@ A Simple CRUD (Create, Read, Update, Delete) Based To-Do List with User Authenti
 
 ![Screenshot](https://github.com/zengboi/To-Do-List/blob/main/preview/task-list.png?raw=true)
 
-## Deployment
 
-1. To deploy this project:
+## Run Locally
+
+1. Clone the project
 
 ```bash
- git clone https://github.com/zengboi/To-Do-List.git
- cd To-Do-List
- python3 -m venv your_virtualenv_name
- source ./your_virtualenv_name/bin/activate
- pip install -r requirements.txt
+  git clone https://github.com/zengboi/To-Do-List.git
 ```
 
-2. Migrate the database fo the project:
+2. Go to the project directory
+
 ```bash
-python manage.py makemigrations
-python manage.py migrate
+  cd To-Do-List
 ```
 
-3. Create a Admin User:
+3. Install dependencies
+
 ```bash
-python manage createsuperuser
+  python3 -m venv your_virtualenv_name
+  source ./your_virtualenv_name/bin/activate
+  pip install -r requirements.txt
+
 ```
 
-4. Run the project:
+4. Start the Database Mirgation
+
+```bash
+  python manage.py makemigrations
+  python manage.py migrate
+```
+
+5. Create a Admin User
+
+```bash
+    python manage.py createsuperuser
+```
+
+6. Start the project
+
 ```bash
 python manage.py runserver
 ```
-This app will run on your (localhost:8000)
+The app will run on your (localhost:8000)
+
+## Lessons Learned
+
+What did you learn while building this project?
+
+✅ Different Class-Based Views.
+
+✅ How they are implemented?
+
+✅ Working behind the Class-Based Views.
+
     
 ## LICENSE
 
